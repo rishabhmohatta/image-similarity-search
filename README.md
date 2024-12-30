@@ -18,6 +18,14 @@ Content based image similarity approach using python,deep learning ,computer vis
   ## EXAMPLE:
       python inferencing.py --model_type resnet --visualize True -eval True -num_img 10 [It will extract feature with resnet and visualize and display the test number of images and saved the evaluation metrics ]
       python inferencing.py --model_type siamesenet --train_sn True --no_of_test_image 5 --test True [It will train the siamese network on default dataset with default epochs and saved it into models and test 5 images with new model]
+  # Result comparision:
+      Tested the fashion database 150 test images and the metrics is:
+        ![image](https://github.com/user-attachments/assets/42d801ab-15d7-4626-9128-c9e47f49f11a)
+
+      1. Autoencoder has the highest precision (77.64%) and accuracy (77.07%), indicating it performs well in distinguishing relevant results from non-relevant ones.
+      2. Siamese network with triplets has better trade-off of Precision and recall
+      3. Resnet has lower accuracy as it is not trained with the fashion-mnist dataset.It can be improved by training a model with own database rather then using pre trained weights.
+      4. All model has a sample architecture they can be improved with adding complex network 
   # Remarks:
     0. Accuracy ,time,space (for storing faiss embedding) all three can be improved like( If we trained resnet50 with our sample dataset and then extract embeddings it can give good accurcay,Storing the ebedding in different format like binary files or compressed version,etc) 
     1.Can be improvise it better for user with many ways (The code is for evaluation Purpose)
