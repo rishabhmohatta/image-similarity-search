@@ -1,5 +1,6 @@
 # image-similarity-search
-Content based image similarity approach using python,deep learning ,computer vision
+Image Similarity Search, which enables you to retrieve similar images from a database based on an input image
+In this approach used python,deep learning ,computer vision,faiss
 # Install The Requirements
     pip install -r requirements.txt
 # Run the script using the following command:
