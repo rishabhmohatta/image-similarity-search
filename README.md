@@ -20,7 +20,7 @@ Content based image similarity approach using python,deep learning ,computer vis
       python inferencing.py --model_type siamesenet --train_sn True --no_of_test_image 5 --test True [It will train the siamese network on default dataset with default epochs and saved it into models and test 5 images with new model]
   # Result comparision:
       Tested the fashion database 150 test images and the metrics is:
-        ![image](images\Metrics.png)
+      ![image]('images\Metrics.png')
 
       1. Autoencoder has the highest precision (77.64%) and accuracy (77.07%), indicating it performs well in distinguishing relevant results from non-relevant ones.
       2. Siamese network with triplets has better trade-off of Precision and recall
