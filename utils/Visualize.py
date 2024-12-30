@@ -21,5 +21,6 @@ def plot_results(query_image,distance,x_train,y_train,indices):
             plt.axis('off')
     
         plt.tight_layout()
+        plt.savefig(f"images\image_{i}_out.png")
         plt.show()
         
