@@ -23,4 +23,26 @@ def plot_results(query_image,distance,x_train,y_train,indices):
         plt.tight_layout()
         plt.savefig(f"images\image_{i}_out.png")
         plt.show()
-        
+
+
+def plot_results_save(image_name,output_path,query_image,distance,x_train,y_train,indices):
+  plt.figure(figsize=(10, 5))
+
+  # Display the original image
+  plt.subplot(1, len(indices[0]) + 1, 1)
+  plt.imshow(query_image[0].squeeze(),cmap='gray')
+  plt.title("Query Image")
+  plt.axis('off')
+
+  # Plot the similar images
+  for j in range(len(indices[0])):
+      plt.subplot(1, len(indices[0]) + 1, j + 2)
+      plt.imshow(x_train[indices[0][j]].squeeze(),cmap='gray')
+      plt.title(f"cls:{y_train[indices[0][j]]},(Dist:{distance[0][j]:.2f})")
+      plt.text(0.5, -0.2, f"Img:{j+1}", ha='center', va='center', transform=plt.gca().transAxes)
+      plt.axis('off')
+    
+  plt.tight_layout()
+  plt.savefig(f"{output_path}/{image_name}")
+  print("Image Saved")
+  plt.show()
