@@ -4,21 +4,13 @@ In this approach used python,deep learning ,computer vision,faiss
 # Install The Requirements
     pip install -r requirements.txt
 # Run the script using the following command:
-    python inferencing.py [options]
+    python test.py [options]
   ## Arguments:
-    -mt or --model_type: This is a required argument that specifies the type of model to use. Available options are resnet, autoencoder, siamesenet, or VIT. The default value is resnet.
-    -train_ae or --train_autoencoder: This is a boolean flag that indicates whether to train the autoencoder. The default value is False.
-    -train_sn or --train_siamesenet: This is a boolean flag that indicates whether to train the SiameseNet. The default value is False.
-    -test or --testing: This boolean flag indicates if testing should be performed. The default value is True.
-    -num_img or --no_of_test_image: This integer argument specifies the number of test images to use. The default value is 1.
-    -vis or --visualize: This boolean flag enables visualization of results when set to True. The default value is False.
-    -eval or --evaluation: This boolean flag determines whether evaluation should be performed after inference. The default value is True.
-    -path_st or --siamese_model_path: This string argument specifies the path to the Siamese model file. The default path is models/Sample_siamese.h5.
-    -path_ae or --autoencoder_model_path: This string argument specifies the path to the autoencoder model file. The default path is models/Sample_autoencoder.h5.
-    -path_eval or --evalpath: This string argument specifies the path to the evaluation metrics file. The default path is eval_summary.csv
+    -mt or --model_type: This is a required argument that specifies the type of model to use. Available options are resnet, autoencoder, siamesenet, or VIT. The default value is autoencoder.
+    -i or --test_image_path: Type: str, Default: input/, Description: Path to the test image file.
+    -o or --output_path: Type: str, Default: output/, Description: Directory where the output of the model will be saved
   ## EXAMPLE:
-      python inferencing.py --model_type resnet --visualize True -eval True -num_img 10 [It will extract feature with resnet and visualize and display the test number of images and saved the evaluation metrics ]
-      python inferencing.py --model_type siamesenet --train_sn True --no_of_test_image 5 --test True [It will train the siamese network on default dataset with default epochs and saved it into models and test 5 images with new model]
+      python test.py -mt "autoencoder" -i "input/" -o "output/"
   # Result comparision:
       Tested the fashion database 150 test images and the metrics is:
       ![table 1](https://raw.githubusercontent.com/rishabhmohatta/image-similarity-search/main/images/Metrics.png)
