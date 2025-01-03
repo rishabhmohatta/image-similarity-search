@@ -50,9 +50,9 @@ def parse_arguments():
     parser = argparse.ArgumentParser(description='Model configuration and testing parameters.')
     parser.add_argument('-mt','--model_type', type=str, choices=['resnet', 'autoencoder', 'siamesenet', 'VIT'],
                           default='autoencoder', help='Type of model to use.')
-    parser.add_argument('-i','--test_image_path', type=str, default='/content/input/',
+    parser.add_argument('-i','--test_image_path', type=str, default='input/',
                           help='Path of the test the image file')
-    parser.add_argument('-o','--output_path', type=str, default='/content/output/',
+    parser.add_argument('-o','--output_path', type=str, default='output/',
                           help='saving the output of model')
     return parser.parse_args()
 if __name__ == '__main__':
